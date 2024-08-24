@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start": "node index.js",
     "db:create": "sqitch deploy --verify",
     "db:reset": "sqitch revert -y && npm run db:create",
     "db:save": "node backup.js",

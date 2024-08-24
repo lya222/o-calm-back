@@ -8,3 +8,4 @@
 05_passwordStrongerRegex 2024-07-06T18:42:17Z camille gripon <gripon@Bidule> # adding stronger regex at password constraint
 06_update_gps_location 2024-07-15T11:21:54Z camille gripon <gripon@Bidule> # change gps_location to an object with longitude and latitude
 07_favoriteTable 2024-07-15T11:23:02Z camille gripon <gripon@Bidule> # adding favorite table
+08_contactTable 2024-08-20T18:47:01Z Live session user,,, <ubuntu@ubuntu> # Ajout table contact

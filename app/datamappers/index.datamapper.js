@@ -14,3 +14,18 @@ export const userDatamapper = new AuthenticationDatamapper(client);
  * @type {Object}
  */
 export const placeDatamapper = new PlacesDatamapper(client);
+
+
+
+
+
+// 20 AOUT POUR CP
+// Début de la création des controllers pour la table contact 20 aôut 
+// Ceci est l'étape 1
+import ContactDataMapper from './contact.datamapper.js';
+
+/**
+ * Instance du datamapper pour la page contact 
+ * @type {Object}
+ */
+export const contactDataMapper = new ContactDataMapper(client);

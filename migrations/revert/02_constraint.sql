@@ -18,6 +18,5 @@ ALTER TABLE "city"
   DROP CONSTRAINT "cityPostalCodeCheck",
   DROP CONSTRAINT "cityDepartmentCheck",
   DROP CONSTRAINT "cityRegionCheck";
-
-
+  
 COMMIT;
