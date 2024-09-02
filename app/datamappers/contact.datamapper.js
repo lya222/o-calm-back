@@ -1,10 +1,5 @@
-// Ceci est l'étape 2 dans la création du controller pour contact 
 import CoreDatamapper from './core.datamappers.js';
 
-/**
- * Datamapper pour les entités "place".
- * Hérite des méthodes de base du CoreDatamapper.
- */
 export default class ContactDataMapper extends CoreDatamapper {
     /**
      * Nom de la table en lecture.
@@ -20,26 +15,13 @@ export default class ContactDataMapper extends CoreDatamapper {
 
 
 
-    async createContact(input) {
-        const columnNames = Object.keys(input);
-        // values = valeurs des colonnes
-        const values = Object.values(input);
-        // on créé les $1, $2, $3, etc.
-        const valuesPosition = columnNames.map((_, index) => `$${index + 1}`).join(', ');
+    async createContact(name, email, message) {
+        const data = await this.client.query({
+        text: `INSERT INTO "${this.constructor.writeTableName}" (name, email, message) VALUES ($1, $2, $3)`,
+        values: [name, email, message],
+        });
+        return data.rows;
 
-        const message = await this.client.query(`
-        INSERT INTO "${this.constructor.writeTableName}" (${[...columnNames]})
-        VALUES (${valuesPosition})
-        RETURNING *`,
-        values);
-
-
-        return message.rows;
-
-
-
-
-    };
+};
 };
 
-//continuer la suite apres avoir crée les tables
